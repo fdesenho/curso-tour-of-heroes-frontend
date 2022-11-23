@@ -1,11 +1,22 @@
 <h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-    [class.selected] = "hero === selectedHero"
-    (click)="onSelect(hero)"
-    >
+<mat-table [dataSource]="heroes">
+  <!-- User name Definition -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+  </ng-container>
 
-    <span>{{ hero.id }}</span>{{ hero.name }}
-  </li>
-</ul>
-<app-hero-detail [hero]="selectedHero"  ></app-hero-detail>
+  <!-- Age Definition -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="displayedColumn"></mat-header-row>
+  <mat-row
+  *matRowDef="let row; columns: displayedColumn"
+  [routerLink]="['/heroes',row.id]"
+  ></mat-row>
+</mat-table>
+

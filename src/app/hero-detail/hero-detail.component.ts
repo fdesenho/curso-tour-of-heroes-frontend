@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Hero } from "../hero.model";
 import { HeroService } from "../hero.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hero-detail',
@@ -26,5 +27,6 @@ export class HeroDetailComponent implements OnInit{
  }
  goBack() : void{
   this.location.back();
+
  }
 }
