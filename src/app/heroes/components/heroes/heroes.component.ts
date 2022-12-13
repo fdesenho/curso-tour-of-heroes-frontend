@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero.model';
-import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
+import { Hero } from 'src/app/core/models/hero.model';
+import { HeroService } from 'src/app/core/services/hero.service';
+
 
 
 
@@ -15,7 +15,7 @@ export class HeroesComponent  implements OnInit{
   heroes : Hero[]=[];
 
 
-  constructor(private heroService:HeroService){
+  constructor(public heroService:HeroService){
 
   }
   ngOnInit(): void {
