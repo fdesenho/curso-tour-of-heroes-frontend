@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from '../../models/menu-Item.model';
 
 @Component({
@@ -10,5 +11,11 @@ export class ToolbarComponent  {
   @Input() title = '';
   @Input() menuItems : MenuItem[] = [] ;
 
+  constructor(private router: Router){
+
+  }
+  routerLink(route:string): void{
+    this.router.navigate([route]);
+  }
 
 }

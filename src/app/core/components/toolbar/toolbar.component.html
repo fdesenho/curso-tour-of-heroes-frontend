@@ -5,6 +5,8 @@
       aria-label="menuItem.toolTipText"
       mat-icon-button
       [matTooltip]="menuItem.toolTipText"
+
+      (click)="routerLink(menuItem.routerLink)"
       *ngFor="let menuItem of menuItems"
 
     >

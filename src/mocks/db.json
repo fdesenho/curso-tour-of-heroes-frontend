@@ -1,14 +1,48 @@
 {
-"heroes" : [
-  {"id": 1, "name": "Wolverine"},
-  {"id": 2, "name": "Spiderman"},
-  {"id": 3, "name": "Storm"},
-  {"id": 4, "name": "Brain"},
-  {"id": 5, "name": "Batman"},
-  {"id": 6, "name": "SuperMan"},
-  {"id": 7, "name": "WonderfulWoman"},
-  {"id": 8, "name": "Joker"},
-  {"id": 9, "name": "AmericanCaptain"},
-  {"id": 10, "name": "Hulk"}
-]
+  "heroes": [
+    {
+      "id": 2,
+      "name": "Spiderman"
+    },
+    {
+      "id": 3,
+      "name": "Storm"
+    },
+    {
+      "id": 4,
+      "name": "Brain"
+    },
+    {
+      "id": 5,
+      "name": "Batman"
+    },
+    {
+      "id": 6,
+      "name": "SuperMan"
+    },
+    {
+      "id": 7,
+      "name": "WonderfulWoman"
+    },
+    {
+      "id": 8,
+      "name": "Joker"
+    },
+    {
+      "id": 9,
+      "name": "AmericanCaptain"
+    },
+    {
+      "id": 10,
+      "name": "Hulk"
+    },
+    {
+      "name": "Cyclope",
+      "id": 11
+    },
+    {
+      "name": "Wolverine",
+      "id": 12
+    }
+  ]
 }
