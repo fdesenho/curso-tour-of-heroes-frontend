@@ -42,7 +42,7 @@ export class HeroDetailComponent implements OnInit {
       const id = Number(paramId);
       this.heroService.getOne(id).subscribe((hero) => {
         this.hero = hero;
-        this.form.controls['id'].setValue('1');
+        this.form.controls['id'].setValue(hero.id+'');
         this.form.controls['name'].setValue(hero.name);
       });
     }

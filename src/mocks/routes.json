@@ -1,4 +1,5 @@
 {
   "/api/*": "/$1",
-  "/heroes\\?name=:term":"/heroes?q=:term"
+
+  "/heroes\\?name=:term": "/heroes?q=:term"
 }

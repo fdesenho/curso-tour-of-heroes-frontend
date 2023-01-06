@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth/services/auth.service';
 import { MenuItem } from './core/models/menu-Item.model';
 
 @Component({
@@ -7,6 +9,7 @@ import { MenuItem } from './core/models/menu-Item.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  isLoggedIn$ : Observable<boolean>;
   title = 'Tour of heroes';
   menuItems : MenuItem[]=
   [
@@ -21,4 +24,11 @@ export class AppComponent {
       toolTipText : 'Heroes'
     }
   ];
+  constructor(private authService : AuthService){
+    this.isLoggedIn$=this.authService.isLoggedIn$;
+  }
+
+  onLogout():void{
+    this.authService.logout();
+  }
 }

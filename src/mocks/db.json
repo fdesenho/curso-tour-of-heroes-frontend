@@ -10,7 +10,7 @@
     },
     {
       "id": 4,
-      "name": "Brain"
+      "name": "Brai"
     },
     {
       "id": 5,
@@ -22,7 +22,7 @@
     },
     {
       "id": 7,
-      "name": "WonderfulWoman"
+      "name": "Wonderful Woman"
     },
     {
       "id": 8,
@@ -43,6 +43,14 @@
     {
       "name": "Wolverine",
       "id": 12
+    },
+    {
+      "name": "Avatar",
+      "id": 13
+    },
+    {
+      "name": "American Captain",
+      "id": 14
     }
   ]
 }

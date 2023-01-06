@@ -6,7 +6,13 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/components/heroes/heroes.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: '/dashboard',pathMatch:'full'},
+  {path:'', redirectTo: '/login',pathMatch:'full'},
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+
   {
     path: 'dashboard',
     loadChildren: () =>
