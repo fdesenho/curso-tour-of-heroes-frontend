@@ -9,17 +9,28 @@
       </mat-form-field>
 
       <mat-form-field >
-        <mat-label>Hero name</mat-label>
+        <mat-label>Name</mat-label>
         <input
         id="name"
         formControlName="name"
         matInput
         placeholder="Name"
         type="text"
+
         >
         <mat-error *ngIf="form.controls['name'].hasError('required')">Name is required.</mat-error>
+        <mat-error *ngIf="form.controls['name'].hasError('maxLenght')">Name should contain at least 10 characters.</mat-error>
         <mat-error *ngIf="form.controls['name'].hasError('minLenght')">Name should contain at least 3 characters.</mat-error>
       </mat-form-field>
+
+
+      <mat-label >Gender</mat-label>
+      <mat-radio-group formControlName="genre" aria-label="Select an option">
+          <mat-radio-button  value="M">M</mat-radio-button>
+          <mat-radio-button  value="F">F</mat-radio-button>
+      </mat-radio-group>
+
+
     </mat-card-content>
   <mat-card-actions>
     <button
@@ -27,6 +38,7 @@
           mat-raised-button
           *ngIf="!isEditing"
           (click)="create()"
+          [disabled]="!form.valid"
         >
           Create
         </button>
@@ -36,11 +48,13 @@
           mat-raised-button
           *ngIf="isEditing"
           (click)="update()"
+          [disabled]="!form.valid"
         >
           Update
         </button>
 
       <button mat-raised-button (click)="goBack()" >Go back</button>
+      <button mat-raised-button (click)="resetForm()" >Reset</button>
     </mat-card-actions>
   </mat-card>
 </form>

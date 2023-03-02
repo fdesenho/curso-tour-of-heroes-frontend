@@ -1,16 +1,18 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../core/models/hero.model';
 import { HeroService } from '../core/services/hero.service';
 
 
+
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.scss'],
+  preserveWhitespaces:true
 })
 export class HeroDetailComponent implements OnInit {
   hero!: Hero;
@@ -18,7 +20,8 @@ export class HeroDetailComponent implements OnInit {
 
   form = this.fb.group({
     id: [{ value: '', disabled: true }],
-    name: ['', [Validators.required, Validators.minLength(3)]],
+    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
+    genre: ['',[Validators.required]],
   });
 
   constructor(
@@ -44,6 +47,7 @@ export class HeroDetailComponent implements OnInit {
         this.hero = hero;
         this.form.controls['id'].setValue(hero.id+'');
         this.form.controls['name'].setValue(hero.name);
+        this.form.controls['genre'].setValue(hero.genre);
       });
     }
   }
@@ -58,6 +62,7 @@ export class HeroDetailComponent implements OnInit {
     if (valid) {
       const hero: Hero = {
         name: value.name,
+        genre: value.genre,
       } as Hero;
 
       this.heroService.create(hero).subscribe(() => this.goBack());
@@ -73,6 +78,7 @@ export class HeroDetailComponent implements OnInit {
       const hero: Hero = {
         id: this.hero.id,
         name: value.name,
+        genre: value.genre,
       }as Hero;
 
       this.heroService.update(hero).subscribe(() => this.goBack());
@@ -86,5 +92,10 @@ export class HeroDetailComponent implements OnInit {
       duration: 5000,
       verticalPosition: 'top',
     });
+  }
+  resetForm():void{
+
+    this.form.controls['name'].setValue('');
+    this.form.controls['genre'].setValue('');
   }
 }

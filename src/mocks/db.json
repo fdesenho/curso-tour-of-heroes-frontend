@@ -1,55 +1,191 @@
 {
   "heroes": [
     {
-      "id": 2,
-      "name": "Spiderman"
-    },
-    {
       "id": 3,
-      "name": "Storm"
-    },
-    {
-      "id": 4,
-      "name": "Brai"
+      "name": "Storm",
+      "genre": "F"
     },
     {
       "id": 5,
-      "name": "Batman"
+      "name": "Batman",
+      "genre": "M"
     },
     {
       "id": 6,
-      "name": "SuperMan"
+      "name": "SuperMan",
+      "genre": "M"
     },
     {
       "id": 7,
-      "name": "Wonderful Woman"
+      "name": "Wonderful Wom",
+      "genre": "F"
     },
     {
       "id": 8,
-      "name": "Joker"
+      "name": "Joker",
+      "genre": "M"
     },
     {
       "id": 9,
-      "name": "AmericanCaptain"
+      "name": "AmericanCaptain",
+      "genre": "M"
     },
     {
       "id": 10,
-      "name": "Hulk"
+      "name": "Hulk",
+      "genre": "M"
     },
     {
       "name": "Cyclope",
-      "id": 11
+      "id": 11,
+      "genre": "M"
     },
     {
       "name": "Wolverine",
-      "id": 12
+      "id": 12,
+      "genre": "M"
     },
     {
       "name": "Avatar",
-      "id": 13
+      "id": 13,
+      "genre": "M"
     },
     {
       "name": "American Captain",
+      "id": 14,
+      "genre": "M"
+    },
+    {
+      "name": "Criptoon",
+      "id": 15,
+      "genre": "M"
+    },
+    {
+      "name": "Spiderman",
+      "id": 16,
+      "genre": "M"
+    },
+    {
+      "name": "kulk",
+      "id": 17,
+      "genre": "M"
+    },
+    {
+      "name": "Iron man",
+      "genre": "M",
+      "id": 18
+    }
+  ],
+  "users": [
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "id": 1
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "7878798",
+      "email": "fdesenho@hotmail.com",
+      "id": 2
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "angular",
+      "id": 3
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "12345",
+      "id": 4
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": null,
+      "email": "fdesenho@hotmail.com",
+      "password": "123`",
+      "id": 5
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": null,
+      "email": "fdesenho@hotmail.com",
+      "password": "123`",
+      "id": 7
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": null,
+      "email": "fdesenho@hotmail.com",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": null,
+      "email": "fdesenho@hotmail.com",
+      "password": "1233",
+      "id": 9
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "09897989",
+      "email": "fdesenho@hotmail.com",
+      "password": "123`",
+      "id": 10
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "78979798",
+      "email": "fdesenho@hotmail.com",
+      "password": "12334",
+      "id": 11
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "8891891890",
+      "email": "fdesenho@hotmail.com",
+      "password": "1223",
+      "id": 12
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "11",
+      "id": 13
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "12345",
+      "dtBorn": "2023-03-03T03:00:00.000Z",
       "id": 14
     }
   ]

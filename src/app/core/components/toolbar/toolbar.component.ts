@@ -18,6 +18,7 @@ export class ToolbarComponent  {
   }
   routerLink(route:string): void{
     this.router.navigate([route]);
+
   }
   onLogout(): void {
     this.logout.emit();

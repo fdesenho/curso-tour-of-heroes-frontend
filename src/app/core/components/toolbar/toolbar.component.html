@@ -8,6 +8,7 @@
         [matTooltip]="menuItem.toolTipText"
 
         (click)="routerLink(menuItem.routerLink)"
+
         *ngFor="let menuItem of menuItems"
 
       >
@@ -18,6 +19,7 @@
   mat-button
   matTooltip="Login into app"
   *ngIf="!isLoggedIn"
+  (click)="routerLink('/login')"
   routerLink="/login">
   Login
 </a>

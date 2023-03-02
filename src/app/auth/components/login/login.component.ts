@@ -23,4 +23,5 @@ export class LoginComponent {
       this.authService.login(this.form.value.password+'');
     }
   }
+
 }

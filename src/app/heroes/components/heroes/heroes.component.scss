@@ -1,7 +1,7 @@
 .add-button{
   position: absolute;
   right: 20px;
-  top: 120px;
+  top: 130px;
 }
 .mat-row:hover{
   cursor: pointer;
@@ -16,4 +16,18 @@
   border-left:1px solid currentColor;
   max-width: 60px;
   padding-left: 16px;
+}
+.mat-column-genre{
+  border-left:1px solid currentColor;
+  max-width: 60px;
+  padding-left: 16px;
+
+}
+
+.mat-select-value {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  text-align: center;
 }

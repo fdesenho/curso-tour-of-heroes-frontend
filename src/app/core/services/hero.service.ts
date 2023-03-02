@@ -57,18 +57,21 @@ export class HeroService {
   private descAttributes(hero: Hero): string {
     return `Hero ID=${hero.id} and Name=${hero.name}`;
   }
-  search(term:string):Observable<Hero[]>{
-    if(!term.trim()){
-      return of([])
+
+
+  search(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      return of([]);
     }
-    return this.http.get<Hero[]>(`${this.heroesUrl} ? name=${term}`)
-    .pipe(tap((heroes) =>
-      heroes.length?
-        this.log(`found ${heroes.length} hero(es) matching "${term} "`):
-        this.log(`no heroes matching  "${term}"`)
 
-              )
-          );
-
+    return this.http
+      .get<Hero[]>(`${this.heroesUrl}?name=${term}`)
+      .pipe(
+        tap((heroes) =>
+          heroes.length
+            ? this.log(`found ${heroes.length} hero(es) matching "${term}"`)
+            : this.log(`no heroes matching "${term}"`)
+        )
+      );
   }
 }
