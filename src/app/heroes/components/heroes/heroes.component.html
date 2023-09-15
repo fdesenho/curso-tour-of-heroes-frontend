@@ -1,60 +1,87 @@
 <h2>My Heroes</h2>
 <div>
-  <button class="add-button" color="accent" mat-fab routerLink="new" >
-    <mat-icon>add</mat-icon>
-
+  <button class="add-button" color="accent" mat-fab routerLink="new">
+    <mat-icon matTooltip="Create hero">add</mat-icon>
   </button>
+  <button
+    class="upload-button"
+    color="accent"
+    mat-fab
+    (click)="fileUpload.click()"
+  >
+    <mat-icon matTooltip="Create heroes through upload file .csv"
+      >upload</mat-icon
+    >
+  </button>
+  <input
+    hidden
+    #fileUpload
+    (change)="uploadHeroes($event)"
+    type="file"
+    accept=".csv"
+    requiredFileType=".csv"
+  />
 
-  <app-hero-search [label] ="'Hero to delete'" (selected)="onSelected($event)"></app-hero-search>
+  <app-hero-search
+    [label]="'Hero to delete'"
+    (selected)="onSelected($event)"
+  ></app-hero-search>
 </div>
 
 <div>
-  <mat-table [dataSource]="dataSource"  class="mat-elevation-z8" matSort>
-
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <!-- Header and Row Declarations -->
-     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-     <mat-row  [matTooltip]="'Description of ' + row.name"
-     *matRowDef="let row; columns: displayedColumns"
-     [routerLink]="['/heroes',row.id]"
-     #matRow
-     ></mat-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row
+      [matTooltip]="'Description of ' + row.name"
+      *matRowDef="let row; columns: displayedColumns"
+      [routerLink]="['/heroes', row.id]"
+      #matRow
+    ></mat-row>
 
     <!-- Id Definition -->
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.id }} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
     </ng-container>
 
     <!-- Name Definition -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.name }}  </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Name
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
     </ng-container>
 
     <!-- Genre Definition -->
     <ng-container matColumnDef="genre">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
-      <mat-cell  *matCellDef="let row"> {{row.genre}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Gender
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.genre }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button matTooltip="Delete this item" (click)="delete(row); $event.stopPropagation()">
+        <button
+          mat-icon-button
+          matTooltip="Delete this item"
+          (click)="delete(row); $event.stopPropagation()"
+        >
           <mat-icon>delete</mat-icon>
         </button>
       </mat-cell>
     </ng-container>
-
   </mat-table>
   <mat-paginator
-                #paginator
-                [length]="heroes.length"
-                [pageSize]="6"
-                [pageSizeOptions]="[3,6, 9]"
-                aria-label="Select page"
-                [showFirstLastButtons]="true"
+    #paginator
+    [length]="heroes.length"
+    [pageSize]="6"
+    [pageSizeOptions]="[3, 6, 9]"
+    aria-label="Select page"
+    [showFirstLastButtons]="true"
 
-                >
+  >
   </mat-paginator>
 </div>

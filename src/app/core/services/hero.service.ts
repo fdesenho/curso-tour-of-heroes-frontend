@@ -3,7 +3,7 @@ import { finalize, Observable, of, tap } from 'rxjs';
 import { Hero } from '../models/hero.model';
 import { MessageService } from './message.service';
 import { HEROES } from '../../mock.heroes';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { LoadingService } from './loading.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,14 +12,24 @@ import { environment } from 'src/environments/environment';
 })
 export class HeroService {
   private heroesUrl =  `${environment.baseUrl}/heroes`;
-
+  private actualPage = 1;
   constructor(
     private http: HttpClient,
     private messageService: MessageService,
     private loadingService: LoadingService){
 
   }
+  getByLimit(limit:string): Observable<Hero[]>{
+    console.log(this.actualPage++);
+    let params = new HttpParams()
+      .set("_page",this.actualPage++)
+      .set("_limit",limit)
 
+    return this.http
+    .get<Hero[]>(this.heroesUrl)
+    .pipe(tap((heroes)=> this.log(`fetched ${heroes.length} hero(es)` )));
+
+  }
   getAll(): Observable<Hero[]>{
 
     return this.http
@@ -38,6 +48,11 @@ export class HeroService {
     this.messageService.add(`Hero service:  ${message}`);
   }
   create(hero: Hero): Observable<Hero> {
+    return this.http
+      .post<Hero>(this.heroesUrl, hero)
+      .pipe(tap((hero) => this.log(`create ${this.descAttributes(hero)}`)));
+  }
+  createAll(hero: Hero[]): Observable<Hero> {
     return this.http
       .post<Hero>(this.heroesUrl, hero)
       .pipe(tap((hero) => this.log(`create ${this.descAttributes(hero)}`)));

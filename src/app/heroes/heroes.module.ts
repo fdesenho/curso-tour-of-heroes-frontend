@@ -21,7 +21,7 @@ import { SharedModule } from '../shared/shared.module';
     HeroesRoutingModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class HeroesModule { }

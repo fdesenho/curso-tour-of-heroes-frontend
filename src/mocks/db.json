@@ -74,6 +74,242 @@
       "name": "Iron man",
       "genre": "M",
       "id": 18
+    },
+    {
+      "name": "Bob",
+      "genre": "M",
+      "id": 19
+    },
+    {
+      "name": "Cyclope",
+      "id": 21
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 22
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 23
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 24
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 25
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 26
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 27
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 28
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 29
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 30
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 31
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 32
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 33
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 34
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 35
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 36
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 37
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 38
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 39
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 40
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 41
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 42
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 43
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 44
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 45
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 46
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 47
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 48
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 49
+    },
+    [],
+    [],
+    [
+      {
+        "name": "Mario",
+        "genre": "M"
+      },
+      {
+        "name": "Cyclope",
+        "genre": "F"
+      }
+    ],
+    [
+      {
+        "name": "Mario",
+        "genre": "M"
+      },
+      {
+        "name": "Cyclope",
+        "genre": "F"
+      }
+    ],
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 54
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 55
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 56
+    },
+    {
+      "name": "Cyclope",
+      "genre": "F",
+      "id": 57
+    },
+    {
+      "name": "Iron man",
+      "genre": "M",
+      "id": 58
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 59
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 60
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 61
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 62
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 63
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 64
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 65
+    },
+    {
+      "name": "Mario",
+      "genre": "M",
+      "id": 66
     }
   ],
   "users": [
@@ -187,6 +423,24 @@
       "password": "12345",
       "dtBorn": "2023-03-03T03:00:00.000Z",
       "id": 14
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "12345",
+      "dtBorn": "1986-08-25T03:00:00.000Z",
+      "id": 15
+    },
+    {
+      "name": "Fabio Desenho",
+      "genre": "M",
+      "cpf": "05626936963",
+      "email": "fdesenho@hotmail.com",
+      "password": "12345",
+      "dtBorn": "1986-08-25T03:00:00.000Z",
+      "id": 16
     }
   ]
 }

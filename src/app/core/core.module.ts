@@ -12,6 +12,7 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
+
 const COMPONENTS = [
   MessagesComponent,
   ToolbarComponent,

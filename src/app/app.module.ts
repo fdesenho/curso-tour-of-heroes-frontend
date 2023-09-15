@@ -10,11 +10,13 @@ import { HeroesComponent } from './heroes/components/heroes/heroes.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
+import { LegalAgeDirective } from './directives/legal-age.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LegalAgeDirective,
 
 
   ],

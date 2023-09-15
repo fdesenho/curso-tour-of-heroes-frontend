@@ -1,5 +1,5 @@
 <h1>{{ isEditing ? "Update" : "Create" }}</h1>
-<form [formGroup]="form" novalidate>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-card>
     <mat-card-content fxLayout="column" fxLayoutGap="5px">
       <mat-form-field>
@@ -37,6 +37,9 @@
           formControlName="dtBorn"
           id="dtBorn"
           placeholder="Date was born"
+          ngModel
+          required
+          appLegalAge
           #inputDtBorn
         />
         <mat-hint *ngIf="showIconAndHintDtBorn">MM/DD/YYYY</mat-hint>
@@ -46,7 +49,10 @@
           [for]="picker"
         ></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+
       </mat-form-field>
+
+
 
       <div class="gender-Field">
         <mat-label>Gender </mat-label>
@@ -71,10 +77,9 @@
           (blur)="validateEmail()"
         />
         <mat-error *ngIf="form.controls['email'].hasError('required')"
-          >Email is required.</mat-error
+          >Email is required</mat-error
         >
-
-
+        <mat-error *ngIf="emailJustRegister">Email has been register</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -105,9 +110,9 @@
           #confirmPassword
           (blur)="validateConfirmPassword()"
         />
-      <div *ngIf="!passwordIsSameConfirmPassword">
-        <mat-error >Value must be same password.</mat-error>
-      </div>
+        <div *ngIf="!passwordIsSameConfirmPassword">
+          <mat-error>Value must be same password.</mat-error>
+        </div>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

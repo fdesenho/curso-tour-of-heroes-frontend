@@ -8,11 +8,8 @@ import {
 import { Location } from '@angular/common';
 import { User } from 'src/app/core/models/user.model';
 import { UserService } from 'src/app/core/services/user.service';
-import { DialogData } from 'src/app/core/models/dialog-data.model';
-import { MatDialog } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from 'src/app/core/components/confirmation-dialog/confirmation-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { delay, map, tap } from 'rxjs';
+import { debounceTime, delay, distinctUntilChanged, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -23,14 +20,15 @@ export class UsersComponent {
   isEditing = false;
   passwordIsSameConfirmPassword = true;
   showIconAndHintDtBorn = false;
+  emailJustRegister = false;
   @ViewChild(MatDatepickerToggle) dtBornToggle!: MatDatepickerToggle<any>;
-  //@Output("dtBornToggle") dtBornToggle : any;
+
 
   form = this.fb.group({
     cpf: ['', [Validators.required]],
     dtBorn: [Date, [Validators.required]],
     name: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email],this.validateEmail],
     genre: ['M', [Validators.required]],
     password: ['', [Validators.required]],
     confirmPassword: ['', [Validators.required]],
@@ -89,15 +87,19 @@ export class UsersComponent {
 
   update(): void {}
   validateEmail(): void {
-   const  existByEmail =
-    this.userService.getByEmail(this.form.get('email')?.value+'')
-    if(existByEmail){
-      this.snackBar.open('Email has been created! ', '', {
-        duration: 3000,
-        verticalPosition: 'top',
-      })
-    }
+    console.log("teste");
 
+   this.userService.getByEmail(this.form.get('email')?.value+'')
+    .pipe
+    (
+      debounceTime(600),
+      distinctUntilChanged(),
+      map((response:User[])=>response.length>0))
+    .subscribe((response)=>{
+      this.emailJustRegister =  response;
+
+    }
+    );
   }
   validateConfirmPassword(): void {
     this.passwordIsSameConfirmPassword =
@@ -106,5 +108,11 @@ export class UsersComponent {
   }
   focusOnFieldDtBorn(): void {
     this.showIconAndHintDtBorn = !this.showIconAndHintDtBorn;
+  }
+
+  onSubmit():void{
+    console.log("on submit");
+    this.validateConfirmPassword();
+    this.validateEmail();
   }
 }

@@ -36,10 +36,13 @@ export class UserService {
   }
   getByEmail(email: string): Observable<User[]> {
 
-    const users = this.http.get<User[]>(`${this.usersUrl}`)
-    .pipe(map((response:User[])=>response.filter(user=>user.email===email)));
 
-    return  users;
+
+    return  this.http.get<User[]>(`${this.usersUrl}`)
+    .pipe(
+      map((response:User[])=>response.filter(user=>user.email===email))
+
+     );
 
   }
 }
