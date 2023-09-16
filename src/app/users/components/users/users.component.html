@@ -21,7 +21,7 @@
 
       <mat-form-field>
         <mat-label>CPF</mat-label>
-        <input matInput formControlName="cpf" />
+        <input matInput id="cpf" placeholder="CPF" formControlName="cpf" />
         <mat-error *ngIf="form.controls['cpf'].hasError('required')"
           >Cpf is required.</mat-error
         >

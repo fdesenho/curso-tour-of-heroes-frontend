@@ -87,7 +87,7 @@ export class UsersComponent {
 
   update(): void {}
   validateEmail(): void {
-    console.log("teste");
+
 
    this.userService.getByEmail(this.form.get('email')?.value+'')
     .pipe
@@ -111,7 +111,7 @@ export class UsersComponent {
   }
 
   onSubmit():void{
-    console.log("on submit");
+
     this.validateConfirmPassword();
     this.validateEmail();
   }
